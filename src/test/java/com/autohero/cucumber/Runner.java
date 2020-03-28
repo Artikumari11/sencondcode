@@ -1,6 +1,7 @@
 package com.autohero.cucumber;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import net.thucydides.core.reports.html.HtmlAggregateStoryReporter;
 import org.junit.AfterClass;
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 
 // added some
-@RunWith(CucumberWithSerenity.class)
+@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/",
         glue={"com.autohero.cucumber"}
