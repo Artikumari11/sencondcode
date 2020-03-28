@@ -13,7 +13,7 @@ import java.io.IOException;
 
 
 // added some
-@RunWith(Cucumber.class)
+@RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/",
         glue={"com.autohero.cucumber"}
