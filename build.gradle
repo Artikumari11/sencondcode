@@ -1,0 +1,48 @@
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.1.7")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+ext {
+    serenityCoreVersion = '2.1.8'
+    serenityCucumberVersion = '1.9.51'
+    testngVersion = '7.0.0'
+    assertJVersion = '3.8.0'
+}
+
+dependencies {
+
+    testCompile  "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+                 "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
+                 "org.testng:testng:${testngVersion}",
+                 "org.assertj:assertj-core:${assertJVersion}"
+                 "org.apache.commons', name: 'commons-lang3', version: '3.9'"
+
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+
+    test {
+        testLogging.showStandardStreams = true
+        systemProperties System.getProperties()
+    }
+
+}
