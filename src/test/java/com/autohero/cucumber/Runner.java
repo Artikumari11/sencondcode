@@ -14,6 +14,8 @@ import java.io.IOException;
 
 // added some test
 //added new test
+// new commit
+//bad to add
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/",
